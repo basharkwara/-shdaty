@@ -28,7 +28,7 @@ function computeTotal(items: OrderItem[]): number {
   );
 }
 
-function validate(body: any): { ok: true; data: OrderPayload } | { ok: false; res: NextResponse } {
+function validate(body: any): { ok: boolean; data?: OrderPayload; res?: NextResponse } {
   if (!body || typeof body !== "object") {
     return { ok: false, res: badRequest("Body must be a JSON object") };
   }
@@ -43,9 +43,14 @@ function validate(body: any): { ok: true; data: OrderPayload } | { ok: false; re
     return { ok: false, res: badRequest("items must be a non-empty array") };
   }
 
-  for (const [idx, it] of items.entries()) {
-    if (typeof it?.price !== "number" || typeof it?.qty !== "number") {
-      return { ok: false, res: badRequest(`items[${idx}] must include numeric price and qty`) };
+  for (let idx = 0; idx < items.length; idx++) {
+    const it = items[idx];
+
+    if (!it || typeof it.price !== "number" || typeof it.qty !== "number") {
+      return {
+        ok: false,
+        res: badRequest(`items[${idx}] must include numeric price and qty`),
+      };
     }
   }
 
@@ -102,11 +107,15 @@ export async function POST(req: NextRequest) {
     }
 
     const v = validate(raw);
-    if (!("ok" in v && v.ok)) return v.res;
+    if (!v.ok && v.res) {
+      return v.res;
+    }
+
+    const data = v.data as OrderPayload;
 
     // construct payload (aligned with Directus collection fields)
     const bodyToCreate = {
-      ...v.data,
+      ...data,
       created_at: new Date().toISOString(),
       status: (raw?.status as string) || "pending",
     };

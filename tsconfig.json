@@ -7,7 +7,7 @@
       "@admin/*": ["adminui/*"],
       "@admin/components/*": ["adminui/components/*"],
       "@admin/layout/*": ["adminui/layout/*"],
-      "@admin/hooks/*": ["adminui/hooks/*"],
+      "@admin/hooks/*": [".next/hooks/*"],
       "@admin/context/*": ["adminui/context/*"],
       "@admin/icons/*": ["adminui/icons/*"]
     },

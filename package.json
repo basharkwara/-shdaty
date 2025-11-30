@@ -9,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/react": "^6.1.19",
+    "@fullcalendar/timegrid": "^6.1.19",
     "@google/generative-ai": "^0.24.1",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.86.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "flatpickr": "^4.6.13",
     "next": "^13.5.6",
+    "next-auth": "^4.24.13",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal-video": "^2.0.0"
   },
   "devDependencies": {
+    "@types/flatpickr": "^3.0.2",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.33",
     "autoprefixer": "^10.4.16",
