@@ -1,0 +1,7 @@
+@import "react-modal-video/css/modal-video.css";
+
+/* ممكن تضيف كمان قواعد عامة هون مثل: */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}

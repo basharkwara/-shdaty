@@ -1,0 +1,7 @@
+id,product_id,title,qty,price_minor,currency,sort_order,is_active,image_url
+1,1,Diamonds 86,86,149,USD,1,True,https://i.imgur.com/3jVQz0S.jpeg
+2,1,Diamonds 172,172,299,USD,2,True,https://i.imgur.com/3jVQz0S.jpeg
+3,1,Diamonds 257,257,449,USD,3,True,https://i.imgur.com/3jVQz0S.jpeg
+4,1,Diamonds 514,514,899,USD,4,True,https://i.imgur.com/3jVQz0S.jpeg
+5,2,60 UC,60,149,USD,1,True,https://i.imgur.com/0eMV7kU.jpeg
+6,2,325 UC,325,749,USD,2,True,https://i.imgur.com/0eMV7kU.jpeg
